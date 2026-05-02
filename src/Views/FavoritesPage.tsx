@@ -14,7 +14,7 @@ export default function FavoritesPage() {
       {hasFavorites ? (
         <>
           {/* Header */}
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-10">
             <div className="flex items-center gap-4">
               <div className="bg-red-50 p-3 rounded-2xl">
                 <HeartIcon className="w-8 h-8 text-red-400" />
@@ -28,7 +28,7 @@ export default function FavoritesPage() {
                 </p>
               </div>
             </div>
-            <span className="bg-red-50 text-red-400 font-bold text-sm px-4 py-2 rounded-full">
+            <span className="bg-red-50 text-red-400 font-bold text-sm px-4 py-2 mt-6 md:mt-0 rounded-full">
               {favorites.length} Bebida{favorites.length !== 1 ? "s" : ""}
             </span>
           </div>

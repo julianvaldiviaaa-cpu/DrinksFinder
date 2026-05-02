@@ -12,11 +12,11 @@ export default function IndexPage() {
     <div className="container mx-auto px-4 md:px-8 py-12">
       {hasDrinks ? (
         <>
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-10">
             <h1 className="text-5xl font-extrabold tracking-tighter text-gray-900">
               Recetas
             </h1>
-            <span className="bg-orange-100 text-orange-600 font-bold text-sm px-4 py-2 rounded-full">
+            <span className="bg-orange-100 text-orange-600 font-bold text-sm px-4 py-2 mt-6 md:0 rounded-full">
               {Drinks.drinks.length} resultado
               {Drinks.drinks.length !== 1 ? "s" : ""}
             </span>

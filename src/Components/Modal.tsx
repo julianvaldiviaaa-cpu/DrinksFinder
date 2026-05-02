@@ -128,16 +128,19 @@ export default function Modal() {
                         handleClickFavorite(SelectedRecipe);
                         closeModal();
                       }}
-                      className={`flex-1 py-3 rounded-2xl font-bold uppercase tracking-wide flex items-center justify-center gap-2 active:scale-95 transition-all duration-200 ${
+                      className={`flex-1 py-3 rounded-2xl font-bold uppercase tracking-wide flex items-center justify-center gap-1.5 active:scale-95 transition-all duration-200 ${
                         isFavorite
                           ? "bg-red-500 hover:bg-red-600 text-white"
                           : "bg-orange-400 hover:bg-orange-500 text-white"
                       }`}
                     >
-                      <HeartIcon
-                        className={`w-5 h-5 ${isFavorite ? "fill-white" : "fill-white"}`}
-                      />
-                      {isFavorite ? "Eliminar Favorito" : "Agregar Favorito"}
+                      <HeartIcon className="w-4 h-4 shrink-0" />
+                      <span className="hidden sm:inline">
+                        {isFavorite ? "Eliminar Favorito" : "Agregar Favorito"}
+                      </span>
+                      <span className="sm:hidden">
+                        {isFavorite ? "Eliminar" : "Agregar"}
+                      </span>
                     </button>
                   </div>
                 </div>
