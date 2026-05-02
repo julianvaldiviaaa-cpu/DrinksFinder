@@ -7,7 +7,11 @@ import {
 } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import { useAppStore } from "../Stores/useAppStore";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import {
+  MagnifyingGlassIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -24,6 +28,8 @@ export default function Header() {
     ingredient: "",
     category: "",
   });
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
@@ -48,6 +54,12 @@ export default function Header() {
     searchRecipes(searchFilters);
   };
 
+  const links = [
+    { to: "/", label: "Inicio" },
+    { to: "/favorites", label: "Favoritos" },
+    { to: "/generate", label: "Generar con IA" },
+  ];
+
   return (
     <header
       className={
@@ -57,14 +69,11 @@ export default function Header() {
       <div className="mx-auto container px-8 py-6">
         {/* Navbar */}
         <div className="flex justify-between items-center">
-          <img src="/logo.svg" className="w-28" alt="COCKTAIL" />
+          <img src="/logo.svg" className="w-24 shrink-0" alt="COCKTAIL" />
 
-          <nav className="flex items-center gap-1 bg-white/10 backdrop-blur-sm rounded-2xl px-2 py-2">
-            {[
-              { to: "/", label: "Inicio" },
-              { to: "/favorites", label: "Favoritos" },
-              { to: "/generate", label: "Generar con IA" },
-            ].map(({ to, label }) => (
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-1 bg-white/10 backdrop-blur-sm rounded-2xl px-2 py-2">
+            {links.map(({ to, label }) => (
               <NavLink
                 key={to}
                 to={to}
@@ -78,7 +87,40 @@ export default function Header() {
               </NavLink>
             ))}
           </nav>
+
+          {/* Hamburger button */}
+          <button
+            className="md:hidden text-white bg-white/10 hover:bg-white/20 p-2 rounded-xl transition-all duration-200"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? (
+              <XMarkIcon className="w-6 h-6" />
+            ) : (
+              <Bars3Icon className="w-6 h-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <nav className="md:hidden mt-4 flex flex-col gap-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3">
+            {links.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-orange-400 text-white px-4 py-3 rounded-xl uppercase font-bold text-sm transition-all duration-200"
+                    : "text-white/80 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl uppercase font-bold text-sm transition-all duration-200"
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+        )}
 
         {/* Search form */}
         {isHome && (
