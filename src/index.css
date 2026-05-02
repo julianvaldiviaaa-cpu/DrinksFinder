@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: "SuisseIntl-Light";
+  src: url("/public/SuisseIntl/SuisseIntl-Light.woff2");
+}
+
+@font-face {
+  font-family: "SuisseIntl-Regular";
+  src: url("/public/SuisseIntl/SuisseIntl-Regular.woff2");
+}
+
+@theme {
+  --animate-blink: blink 1s ease-in-out infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  --font-suisse-intl: "SuisseIntl-Light";
+  --font-suisse-intl-regular: "SuisseIntl-Regular";
+}
+
+@layer utilities {
+  .SuisseIntl-Light {
+    font-family: var(--font-suisse-intl);
+  }
+
+  .SuisseIntl-Regular {
+    font-family: var(--font-suisse-intl-regular);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
