@@ -3,10 +3,10 @@
 > Search and generate cocktail recipes powered by AI — built with React, TypeScript and OpenRouter.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Zustand](https://img.shields.io/badge/Zustand-5-orange?style=for-the-badge)
-![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 ---
 
@@ -20,27 +20,23 @@
 
 ---
 
-## 🚀 Demo
-
-![Demo](https://via.placeholder.com/900x500/f97316/ffffff?text=DrinksFinder)
-
----
-
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **React 19** | UI and components |
-| **TypeScript** | Static typing |
-| **Tailwind CSS v4** | Styling and design |
-| **Zustand** | Global state management with slices |
-| **React Router v7** | Client-side navigation |
-| **Headless UI** | Accessible modal and transitions |
-| **Heroicons** | Icon library |
-| **React Markdown + remark-gfm** | AI output rendering with tables |
-| **AI SDK (Vercel)** | Response streaming |
-| **OpenRouter** | AI model provider |
-| **TheCocktailDB API** | Cocktail database |
+| Technology | Version | Purpose |
+|---|---|---|
+| **React** | 19 | UI and components |
+| **TypeScript** | 6 | Static typing |
+| **Tailwind CSS** | 4 | Styling and design |
+| **Zustand** | 5 | Global state management with slices |
+| **React Router** | 7 | Client-side navigation |
+| **Headless UI** | 2 | Accessible modal and transitions |
+| **Heroicons** | 2 | Icon library |
+| **React Markdown** | 10 | AI output rendering with tables |
+| **AI SDK (Vercel)** | 6 | Response streaming |
+| **OpenRouter Provider** | 2 | AI model provider |
+| **Axios** | 1 | HTTP requests |
+| **Zod** | 4 | Schema validation |
+| **Vite** | 8 | Build tool |
 
 ---
 
@@ -54,6 +50,7 @@ The generator uses **real-time streaming** to display the recipe as the AI write
 4. React Markdown renders the formatted output instantly
 
 ---
+
 
 ## 📄 License
 
