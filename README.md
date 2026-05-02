@@ -49,9 +49,3 @@ The generator uses **real-time streaming** to display the recipe as the AI write
 3. Stream chunks are accumulated in the Zustand store
 4. React Markdown renders the formatted output instantly
 
----
-
-
-## 📄 License
-
-MIT © [Julian Valdivia](https://github.com/julianvaldiviaaa-cpu)
